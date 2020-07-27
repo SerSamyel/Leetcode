@@ -1,0 +1,10 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        deque, exm = [], {')' : '(', '}': '{', ']': '['}
+        for i in s:
+            if i in exm:
+                if not (deque and deque.pop() == exm[i]):
+                    return False
+            else:
+                deque.append(i)
+        return not deque
