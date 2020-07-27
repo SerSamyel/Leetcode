@@ -1,0 +1,9 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0: return False
+        org_num = x
+        rev_num = 0
+        while x:
+            rev_num = x % 10
+            x = x // 10
+        return org_num == rev_num * 10 + x
